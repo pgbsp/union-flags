@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flags of the United States During the Civil War</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="exhibit">
+        <header class="hero">
+            <p class="eyebrow">Prairie Grove Interpretive Collection</p>
+            <h1>Flags of the United States During the Civil War</h1>
+            <p class="subtitle">National and Military Flags of the Union, 1861–1865</p>
+        </header>
+
+        <section id="imagePanel" class="image-panel" aria-label="Flag image">
+            <img id="flagImage" class="flag-image" src="" alt="Historical flag" draggable="false">
+        </section>
+
+        <section class="flag-info" aria-live="polite">
+            <div class="meta-bar">
+                <div class="meta-item">Year: <span id="flagYear"></span></div>
+                <div class="meta-item">Designer: <span id="flagDesigner"></span></div>
+                <div class="meta-item status-item">Status: <span id="flagStatus"></span></div>
+            </div>
+
+            <h2 id="flagTitle"></h2>
+
+            <div class="content-block">
+                <h3>The Artifact</h3>
+                <p id="flagDescription"></p>
+            </div>
+
+            <div class="content-block">
+                <h3>Historical Context</h3>
+                <p id="historicalContext"></p>
+            </div>
+
+            <div class="content-block">
+                <h3>Interpretation</h3>
+                <p id="interpretation"></p>
+            </div>
+        </section>
+
+        <section class="timeline-section" aria-label="Flag selection">
+            <h3 class="timeline-title">Union Flag Collection</h3>
+            <div id="timeline" class="timeline"></div>
+        </section>
+
+        <footer class="navigation">
+            <button id="prevBtn" class="nav-btn" type="button">← Previous Flag</button>
+            <div class="counter"><span id="currentIndex">1</span> of <span id="totalFlags">10</span></div>
+            <button id="nextBtn" class="nav-btn" type="button">Next Flag →</button>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
