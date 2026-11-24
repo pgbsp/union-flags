@@ -1,0 +1,331 @@
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}:root {
+
+    --parchment: #f3ecd7;
+    --prairie-tan: #d4c2a1;
+    --earth-brown: #5d4735;
+    --sage-green: #748266;
+    --historic-red: #8a3b2e;
+
+    --text-dark: #2d241b;
+    --border-light: #c9b99f;
+    --panel-bg: #faf7ef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: var(--parchment);
+    color: var(--text-dark);
+
+    font-family: "Source Sans 3", sans-serif;
+
+    line-height: 1.7;
+
+    padding: 20px;
+}
+
+.exhibit {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    background: var(--panel-bg);
+
+    border: 2px solid var(--border-light);
+
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .08);
+}
+
+.hero {
+
+    text-align: center;
+
+    padding: 2rem;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+.eyebrow {
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: var(--sage-green);
+
+    margin-bottom: .5rem;
+
+    font-size: .85rem;
+}
+
+.hero h1 {
+
+    font-family: "Libre Baskerville", serif;
+
+    color: var(--earth-brown);
+
+    font-size: 2.4rem;
+
+    margin-bottom: .75rem;
+}
+
+.subtitle {
+
+    color: var(--sage-green);
+
+    font-size: 1.05rem;
+}
+
+.image-panel {
+
+    position: relative;
+
+    background: white;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    cursor: grab;
+
+    touch-action: pan-y;
+}
+
+.image-panel.dragging {
+
+    cursor: grabbing;
+}
+
+.image-panel::after {
+
+    content: "Swipe ← →";
+
+    position: absolute;
+
+    right: 15px;
+    bottom: 15px;
+
+    background: rgba(93, 71, 53, .85);
+
+    color: white;
+
+    padding: .35rem .75rem;
+
+    font-size: .8rem;
+
+    border-radius: 4px;
+
+    pointer-events: none;
+}
+
+.flag-image {
+
+    width: 100%;
+
+    height: 550px;
+
+    object-fit: contain;
+
+    display: block;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+.flag-info {
+
+    padding: 2rem;
+}
+
+.flag-info h2 {
+
+    font-family: "Libre Baskerville", serif;
+
+    color: var(--earth-brown);
+
+    margin-bottom: 1.5rem;
+
+    font-size: 2rem;
+}
+
+.meta-bar {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+
+    background: #efe5d0;
+
+    border-left: 4px solid var(--sage-green);
+
+    padding: .5rem .75rem;
+}
+
+.status-item {
+
+    border-left-color: var(--historic-red);
+}
+
+.content-block {
+
+    margin-bottom: 2rem;
+}
+
+.content-block h3 {
+
+    font-family: "Libre Baskerville", serif;
+
+    color: var(--historic-red);
+
+    margin-bottom: .5rem;
+}
+
+.timeline-section {
+
+    padding: 0 2rem 2rem;
+}
+
+.timeline-title {
+
+    text-align: center;
+
+    color: var(--earth-brown);
+
+    margin-bottom: 1rem;
+
+    font-family: "Libre Baskerville", serif;
+}
+
+.timeline {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    justify-content: center;
+}
+
+.timeline-marker {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--border-light);
+
+    background: white;
+
+    color: var(--earth-brown);
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.timeline-marker.active {
+
+    background: var(--historic-red);
+
+    color: white;
+}
+
+.navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-top: 1px solid var(--border-light);
+
+    padding: 1.5rem;
+}
+
+.nav-btn {
+
+    background: var(--earth-brown);
+
+    color: white;
+
+    border: none;
+
+    padding: .85rem 1.25rem;
+
+    cursor: pointer;
+
+    transition: background .2s ease;
+}
+
+.nav-btn:hover {
+
+    background: var(--historic-red);
+}
+
+.counter {
+
+    color: var(--earth-brown);
+
+    font-weight: 700;
+}
+
+@media (min-width: 900px) {
+
+    .image-panel::after {
+
+        content: "Drag • Swipe • Arrow Keys";
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .flag-image {
+        height: 280px;
+    }
+
+    .navigation {
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .nav-btn {
+
+        width: 100%;
+    }
+
+    .meta-bar {
+
+        flex-direction: column;
+    }
+}
